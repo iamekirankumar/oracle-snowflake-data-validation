@@ -1,0 +1,10 @@
+
+-- Project: Oracle-to-Snowflake Data Validation
+-- Test Case: NULL Validation
+
+SELECT
+    COUNT(*) AS NULL_RECORD_COUNT
+FROM SNOWFLAKE_SCHEMA.CUSTOMERS
+WHERE CUSTOMER_ID IS NULL
+   OR CUSTOMER_NAME IS NULL
+   OR EMAIL IS NULL;
