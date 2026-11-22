@@ -1,0 +1,11 @@
+
+-- Project: Oracle-to-Snowflake Data Validation
+-- Test Case: Duplicate Record Validation
+
+SELECT
+    CUSTOMER_ID,
+    COUNT(*) AS DUPLICATE_COUNT
+FROM SNOWFLAKE_SCHEMA.CUSTOMERS
+GROUP BY CUSTOMER_ID
+HAVING COUNT(*) > 1
+ORDER BY DUPLICATE_COUNT DESC;
